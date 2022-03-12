@@ -12,25 +12,17 @@ task("accounts", "Prints the list of accounts", async (args, hre) => {
 });
 
 dotenv.config();
-const PKS=[process.env.MY_PK!]
+const PKS = [process.env.MY_PK!];
 const config: HardhatUserConfig = {
   solidity: "0.8.7",
   networks: {
-    testnet: {
-      url: "https://data-seed-prebsc-1-s1.binance.org:8545",
-      chainId: 97,
-      gasPrice:15000000000,
-      accounts:PKS,
-    },
-
     mainnet: {
-      url: "https://bsc-dataseed.binance.org/",
-      chainId: 56,
-      accounts: PKS,
+      url: `https://mainnet.infura.io/v3/9834595a34cb43edb2e721f1b27cc3b2`,
+      accounts: [`${process.env.MY_PK!}`],
     },
   },
   etherscan: {
-    apiKey:process.env.ETHERSCAN_API_KEY,
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
 };
 

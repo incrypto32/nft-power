@@ -21,4 +21,4 @@ artifacts
 
 package-lock.json
 yarn.lock
-typechain
+typechain-types
